@@ -210,4 +210,35 @@
   'Call 0xffd2 for printing, 0xc000 for user code.'
   ```
 
+## 5. Common Problems
+
+### Use String Methods
+
+- 一句话：如果你的问题没有用到正则表达式的必要，就不要使用它。
+
+### match() versus search()
+
+- 我没有文档指出的这个问题
+
+### Greedy versus Non-Greedy
+
+- 正则表达式中的`*`，`+`，`?`，`{m, n}`都默认进行贪婪匹配，也就是先匹配尽可能多的字符，如果发现正则表达式后面的部分匹配失败，再一次次地回退。但贪婪匹配的模式不一定是我们想要的，反而可能带来麻烦。可以使用`*?`，`+?`，`??`，`{m, n}?`进行非贪婪匹配，也就是先匹配尽可能少的字符，如果发现正则表达式后面的部分匹配失败，再一次一个字符地增加对应匹配的字符数。
+
+### Using re.VERBOSE
+
+- 一以贯之地保持正则表达式的可读性。
+
+- The `re.VERBOSE` flag has several effects. Whitespace in the regular expression that *isn’t* inside a character class is ignored. This means that an expression such as `dog | cat` is equivalent to the less readable `dog|cat`, but `[ab]` will still match the characters `'a'`, `'b'`, or a space. In addition, you can also put comments inside a RE; comments extend from a `#` character to the next newline. When used with triple-quoted strings, this enables REs to be formatted more neatly:
+
+  ```
+  pat = re.compile(r"""
+   \s*                 # Skip leading whitespace
+   (?P<header>[^:]+)   # Header name
+   \s* :               # Whitespace, and a colon
+   (?P<value>.*?)      # The header's value -- *? used to
+                       # lose the following trailing whitespace
+   \s*$                # Trailing whitespace to end-of-line
+  """, re.VERBOSE)
+  ```
+
   ​
