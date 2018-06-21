@@ -20,7 +20,7 @@
 
 3. *Binary search with only addition and subtraction*. [Mihai Patrascu] Write a program that, given an array of N distinct int values in ascending order, determines whether a given integer is in the array. You may use only additions and subtractions and a constant amount of extra memory. The running time of your program should be proportional to log N in the worst case.
 
-   Answer: 核心的思路仍然是二分查找，关键要是要不使用除2这样的操作来缩减查找的范围，可行的方式是利用Fibonacci数列，搜索范围每次从某一Fibonacci元素，向前变更。实现这个算法的[代码](./Codes/FibBinarySearch.java )有点tricky。
+   Answer: 核心的思路仍然是二分查找，关键要是要不使用除2这样的操作来缩减查找的范围，可行的方式是利用Fibonacci数列，搜索范围每次从某一Fibonacci元素，向前变更。实现这个算法的[代码](Codes/FibBinarySearch.java )有点tricky。
 
    算法复杂度为：$log N$。
 
