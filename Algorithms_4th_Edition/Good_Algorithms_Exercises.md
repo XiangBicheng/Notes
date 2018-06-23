@@ -28,7 +28,14 @@
 
    Answer: NTA
 
-5. 
+5. *Hot or cold*. Your goal is to guess a secret integer between 1 and N. You repeatedly guess integers between 1 and N. After each guess you learn if your guess equals the secret integer (and the game stops). Otherwise, you learn if the guess is hotter (closer to) or colder (farther from) the secret number than your previous guess. You are permitted to guess integers in the range -N to 2N. Design an algorithm that finds the secret number in at most ~2 lg N guesses. Then design an algorithm that finds the secret number in at most ~ 1 lg N guesses.  
+
+  Answer: 解决问题的关键在于怎么样通过每次guess将搜索范围减半。观察到如果我们的两次guess分别为x 和 y，那么我们就可以确定答案是在小于$(x + y) / 2$那一半还是大于$(x + y)/2$的那一半。算法：
+
+  - 假设当前的搜索范围为$[a, b]$，最后一次guess的数字为x，那么下一个guess应为y，其中y满足 $(x + y) / 2 = (a + b) / 2$。
+  - 算法复杂度为：$log N$。
+
+6. 
 
   ​    
 
