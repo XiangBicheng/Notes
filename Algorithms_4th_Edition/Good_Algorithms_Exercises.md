@@ -35,7 +35,18 @@
   - 假设当前的搜索范围为$[a, b]$，最后一次guess的数字为x，那么下一个guess应为y，其中y满足 $(x + y) / 2 = (a + b) / 2$。
   - 算法复杂度为：$log N$。
 
-6. 
+6. *Birthday problem*. Write a program that takes an integer N from the command
+  line and uses StdRandom.uniform() to generate a random sequence of integers between
+  0 and N – 1. Run experiments to validate the hypothesis that the number of
+  integers generated before the first repeated value is found is ~√N/2.
+
+  Answer: NTA
+
+7. *Coupon collector problem*. Generating random integers as in the previous exercise,
+  run experiments to validate the hypothesis that the number of integers generated
+  before all possible values are generated is ~N HN.
+
+8. 
 
   ​    
 
